@@ -1,0 +1,173 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package br.com.jcomputacao.cnab.bb240;
+
+import br.com.jcomputacao.aristoteles.field.FieldDateFixedLengthArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldDecimalFixedLengthArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldFillerArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldIntegerFixedLengthArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
+import br.com.jcomputacao.aristoteles.line.LineArchetype;
+
+/**
+ *
+ * @author Marcos
+ */
+public class LineCnab240BBSegmentoR extends LineArchetype{
+
+
+    /**
+     * CODIGO DO BANCO - DEFAULT 001
+     * POSICAO 001 003
+     */
+    public static final String CODIGO_BANCO_COMPENSACAO = "CODIGO_BANCOS_COMPENSACAO";
+
+    /**
+     * CODIGO DO LOTE
+     * LOTE DE SERVICO
+     * POSICAO 004 007
+     */
+    public static final String CODIGO_DO_LOTE = "CODIGO_DO_LOTE";
+
+    /**
+     * TIPO DE REGISTRO - DEFAULT 3
+     * REGISTRO HEADER DO LOTE
+     * POSICAO 008 008
+     */
+    public static final String TIPO_DE_REGISTRO = "TIPO_DE_REGISTRO";
+
+    /**
+     * SEQUENCIAL DE REGISTRO DO ARQUIVO NO LOTE
+     * TIPO DE OPERACAO
+     * POSICAO 009 013
+     */
+    public static final String SEQUENCIAL_REGISTRO = "SEQUENCIAL_REGISTRO";
+
+    /**
+     * CODIGO DO SEGMENTO DO REGISTRO DETALHE
+     * IDENTIFICACAO DO TIPO DE SERVICO
+     * Repetir código informado no segmento P.
+     * POSICAO 014 014
+     */
+    public static final String CODIGO_SEGMENTO = "CODIGO_SERVICO";
+
+    /**
+     * CODIGO DO SERVICO
+     * IDENTIFICACAO DO TIPO DE SERVICO
+     * POSICAO 014 014
+     * CONTEUDO ' '
+     */
+    public static final String EXCLUSIVO_FEBRABAN = "EXCLUSIVO_FEBRABAN";
+
+    /**
+     * CODIGO DE MOVIMENTO DE REMESSA
+     * POSICAO 016 017
+     */
+    public static final String CODIGO_MOVIMENTO_REMESSA = "CODIGO_MOVIMENTO_REMESSA";
+
+    /**
+     * SERIE DE CAMPOS NAO TRATADOS NO BB
+     * INFORMADOS EM BRANCOS
+     * 44 espaços ' '
+     * POSICAO 018 065
+     */
+    public static final String BRANCOS_1 = "BRANCOS_1";
+
+    /**
+     * CODIGO DA MULTA
+     * POSICAO 066 066
+     * PICTURE 9(01)
+     */
+    public static final String CODIGO_MULTA = "CODIGO_MULTA";
+
+    /**
+     * DATA DA MULTA
+     * POSICAO 067 074
+     */
+    public static final String DATA_MULTA = "DATA_MULTA";
+
+    /**
+     * VALOR DA MULTA
+     * POSICAO 075 089
+     */
+    public static final String VALOR_MULTA = "VALOR_MULTA";
+
+    /**
+     * INFORMACOES DO SACADO
+     * CAMPO NAO TRATADO PELO BB
+     * POSICAO 090 099
+     */
+    public static final String BRANCOS_2 = "BRANCOS_2";
+
+    /**
+     * MENSAGEM 3
+     * No caso em que a impressão do bloqueto é feita pelo banco,\n
+     * essa mensagem sobrescreve a mensagem 1 do header de\n
+     * lote e o campo Sacador/Avalista, ou seja, se o cliente utilizar\n
+     * os campos Mensagem 1, Mensagem 3 e Sacador/Avalista,\n
+     * somente a Mensagem 3 será impressa no boleto. A\n
+     * mensagem 3 é impressa no campo instruções somente da 1ª\n
+     * via.
+     * POSICAO 100 139
+     */
+    public static final String MENSAGEM_3 = "MENSAGEM_3";
+
+    /**
+     * MENSAGEM 4
+     * CAMPO NAO TRATADO PELO BB
+     * PREENCHIDO COM BRANCOS
+     * POSICAO 140 179
+     */
+    public static final String MENSAGEM_4 = "MENSAGEM_4";
+
+    /**
+     * USO EXCLUSIVO FEBRABAN/CNAB
+     * PREENCHIDO COM BRANCOS
+     * POSICAO 180 199
+     */
+    public static final String EXCLUSIVO_FEBRABAN_2 = "EXCLUSIVO_FEBRABAN_2";
+
+    /**
+     * CAMPOS NAO TRATADOS PELO BANCO DO BRASIL
+     * PREENCHER COM ZEROS
+     * 32 ZEROS
+     * POSICAO 200 231
+     */
+    public static final String ZEROS = "ZEROS";
+
+    /* BRANCOS
+     * COMPLEMENTO DE REGISTRO
+     * POSICAO 232 240
+     * PICTURE X(33)
+     * CONTEUDO BRANCOS
+     */
+    public static final String BRANCOS = "BRANCOS";
+
+        public LineCnab240BBSegmentoR() {
+
+//*****************************Segmento R****************************************
+        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldDefaultArchetype("001"));
+        addFieldArchetype(CODIGO_DO_LOTE, new FieldIntegerFixedLengthArchetype(4));
+        addFieldArchetype(TIPO_DE_REGISTRO, new FieldDefaultArchetype("3"));
+        addFieldArchetype(SEQUENCIAL_REGISTRO, new FieldStringFixedLengthArchetype(5));
+        addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("R"));
+        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));
+        addFieldArchetype(CODIGO_MOVIMENTO_REMESSA, new FieldIntegerFixedLengthArchetype(2));
+        addFieldArchetype(BRANCOS_1, new FieldFillerArchetype(44, ' '));
+        addFieldArchetype(CODIGO_MULTA, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(DATA_MULTA, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        addFieldArchetype(VALOR_MULTA, new FieldDecimalFixedLengthArchetype(13, 2));
+        addFieldArchetype(BRANCOS_2, new FieldFillerArchetype(10, ' '));
+        addFieldArchetype(MENSAGEM_3, new FieldStringFixedLengthArchetype(40));
+        addFieldArchetype(MENSAGEM_4, new FieldFillerArchetype(40, ' '));
+        addFieldArchetype(EXCLUSIVO_FEBRABAN_2, new FieldFillerArchetype(20, ' '));
+        addFieldArchetype(ZEROS, new FieldFillerArchetype(32, '0'));
+        addFieldArchetype(BRANCOS, new FieldFillerArchetype(9, ' '));
+
+    }
+}
+
