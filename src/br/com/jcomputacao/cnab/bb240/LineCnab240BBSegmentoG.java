@@ -110,7 +110,7 @@ public class LineCnab240BBSegmentoG  extends LineArchetype {
      * NUMERO DE INSCRICAO DO CEDENTE
      * POSICAO 063 077
      */
-    public static final String NUMERO_INSCRICAO_CEDENTE = "CODIGO_CARTEIRA";
+    public static final String NUMERO_INSCRICAO_CEDENTE = "NUMERO_INSCRICAO_CEDENTE";
     /**
      * NOME DO CEDENTE
      * POSICAO 078 107

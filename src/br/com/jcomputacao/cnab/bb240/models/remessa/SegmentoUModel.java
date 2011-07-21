@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package br.com.jcomputacao.cnab.bb240.models;
+package br.com.jcomputacao.cnab.bb240.models.remessa;
 
 import java.util.Date;
 

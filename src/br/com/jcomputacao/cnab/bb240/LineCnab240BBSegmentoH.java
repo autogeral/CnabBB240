@@ -72,142 +72,87 @@ public class LineCnab240BBSegmentoH extends LineArchetype {
      * POSICAO 016 017
      */
     public static final String CODIGO_MOVIMENTO_RETORNO = "CODIGO_MOVIMENTO_RETORNO";
-    /**
-     * AGENCIA MANTENEDORA
-     * 5 ESPACOS
-     * POSICAO 018 022
+   /**
+     * INSCRICAO DO SACADOR
+     * 1 - CPF
+     * 2 - CNPJ
+     * POSICAO 062 062
      */
-    public static final String AGENCIA_MANTENEDORA = "AGENCIA_MANTENEDORA";
+    public static final String INSCRICAO_SACADOR = "INSCRICAO_SACADOR";
     /**
-     * DIGITO VERIFICADOR DA AGENCIA
-     * POSICAO 023 023
-     * PICTURE 9(01)
+     * NUMERO DE INSCRICAO DO SACADOR
+     * POSICAO 063 077
      */
-    public static final String DIGITO_VERIFICADOR_AGENCIA = "DIGITO_VERIFICADOR_AGENCIA";
+    public static final String NUMERO_INSCRICAO_SACADOR = "NUMERO_INSCRICAO_SACADOR";
     /**
-     * NUMERO DA CONTA CORRENTE
-     * POSICAO 024 035
+     * NOME DO SACADOR
+     * POSICAO 078 107
      */
-    public static final String NUMERO_CONTA_CORRENTE = "NUMERO_CONTA_CORRENTE";
+    public static final String NOME_SACADOR = "NOME_SACADOR";
+    
     /**
-     * DIGITO VERIFICADOR DA CONTA
-     * POSICAO 036 036
-     */
-    public static final String DIGITO_VERIFICADOR_CONTA = "DIGITO_VERIFICADOR_CONTA";
-    /**
-     * DIGITO VERIFICADOR DA CONTA / AGENCIA
-     * POSICAO 037 037
-     */
-    public static final String DIGITO_VERIFICADOR_CONTA_AGENCIA = "DIGITO_VERIFICADOR_CONTA_AGENCIA";
-    /**
-     * IDENTIFICACAO DO TITULO
+     * CODIGO DE DESCONTO 1
      * POSICAO 038 057
      */
-    public static final String IDENTIFICACAO_TITULO = "IDENTIFICACAO_TITULO";
+    public static final String CODIGO_DESCONTO_1 = "CODIGO_DESCONTO_1";
     /**
-     * CODIGO DA CARTEIRA
+     * DATA DO DESCONTO 1
      * POSICAO 058 058
      */
-    public static final String CODIGO_CARTEIRA = "CODIGO_CARTEIRA";
+    public static final String DATA_DESCONTO_1 = "DATA_DESCONTO_1";
     /**
-     * NUMERO DO DOCUMENTO DE COBRANCA
+     * VALOR/PERCENTUAL DO DESCONTO 1
      * POSICAO 059 073
      */
-    public static final String NUMERO_DOC_COBRANCA = "NUMERO_DOC_COBRANCA";
+    public static final String VALOR_PERC_DESCONTO_1 = "VALOR_PERC_DESCONTO_1";
     /**
-     * DATA VENCIMENTO DO TITULO
+     * CODIGO DE DESCONTO 2
+     * POSICAO 038 057
+     */
+    public static final String CODIGO_DESCONTO_2 = "CODIGO_DESCONTO_2";
+    /**
+     * DATA DO DESCONTO 2
+     * POSICAO 058 058
+     */
+    public static final String DATA_DESCONTO_2 = "DATA_DESCONTO_2";
+    /**
+     * VALOR/PERCENTUAL DO DESCONTO 2
+     * POSICAO 059 073
+     */
+    public static final String VALOR_PERC_DESCONTO_2 = "VALOR_PERC_DESCONTO_2";
+    /**
+     * CODIGO DA MULTA
+     * /1/ - Valor Fixo
+     * /2/ - Percentual
      * POSICAO 074 081
      */
-    public static final String DATA_VENCIMENTO_TITULO = "DATA_VENCIMENTO_TITULO";
+    public static final String CODIGO_MULTA = "CODIGO_MULTA";
     /**
-     * VALOR NOMINAL DO TITULO
-     * POSICAO 082 096
-     */
-    public static final String VALOR_NOMINAL = "VALOR_NOMINAL";
-    /**
-     * NUMERO DO BANCO
-     * POSICAO 097 099
-     */
-    public static final String NUMERO_BANCO = "NUMERO_BANCO";
-    /**
-     * AGENCIA COBRADORA / RECEBEDORA
-     * POSICAO 100 104
-     */
-    public static final String AGENCIA_COBRADORA_RECEBEDORA = "AGENCIA_COBRADORA_RECEBEDORA";
-    /**
-     * DIGITO VERIFICADOR DA AGENCIA
-     * POSICAO 105 105
-     */
-    public static final String DIGITO_VERIFICADOR_AG_RECEBEDORA = "DIGITO_VERIFICADOR_AG_RECEBEDORA";
-    /**
-     * IDENTIFICACAO DO TITULO NA EMPRESA
-     * POSICAO 106 130
-     */
-    public static final String IDENTIFICACAO_TITULO_EMPRESA = "IDENTIFICACAO_TITULO_EMPRESA";
-    /**
-     * CODIGO DA MOEDA
-     * POSICAO 131 132
-     */
-    public static final String CODIGO_MOEDA = "CODIGO_MOEDA";
-    /**
-     * TIPO DA INSCRICAO
-     * NAO INFORMADO
-     * POSICAO 133 133
-     */
-    public static final String TIPO_INSCRICAO = "TIPO_INSCRICAO";
-    /**
-     * NUMERO DE INSCRICAO
-     * NAO INFORMADO
-     * POSICAO 134 148
-     */
-    public static final String NUMERO_INSCRICAO = "NUMERO_INSCRICAO";
-    /**
-     * NOME
-     * NAO INFORMADO
+     * DATA DA MULTA
      * POSICAO 149 188
      */
-    public static final String NOME = "NOME";
+    public static final String DATA_MULTA = "DATA_MULTA";
     /**
-     * NUMERO DO CONTRATANTE DA OPERACAO DE CREDITO
-     * NAO INFORMADO
+     * VALOR PERCENTUAL DA MULTA
      * POSICAO 189 198
      */
-    public static final String NUM_CONTRATANTE_OPERACAO_CREDITO = "NUM_CONTRATANTE_OPERACAO_CREDITO";
+    public static final String VALOR_PERC_MULTA = "VALOR_PERC_MULTA";
     /**
-     * VALOR DA TARIFA / CUSTAS
+     * VALOR DE JUROS POR DIA ATRASO
      * POSICAO 189 198
      */
-    public static final String VALOR_TARIFA_CUSTAS = "VALOR_TARIFA_CUSTAS";
-    /**
-     * IDENTIFICACAO PARA REJEICOES, TARIFAS,
-     * CUSTAS, LIQUIDACAO E BAIXAS
-     *
-     * Os códigos de Rejeições, Tarifas, Custas, Liquidações e
-     * Baixas, estão diretamente relacionados com os Códigos de
-     * Movimentos Retorno (pos. 16 e 17). Vide tabelas leiaute
-     * Febraban.
-     * Exceção: Desconsiderar
-     * Código de rejeição Febraban:
-     * 52 - Unidade da Federação Inválida
-     * Considerar
-     * Código de rejeição Banco do Brasil:
-     * 52 - Registro de Título já liquidado Cart. 17
-     *
-     * Detalhamento para DDA:
-     * Para título DDA, o campo “Código de movimento de retorno”,
-     * posição 16 a 17, apresentará a mensagem “02 – Entrada
-     * confirmada”. Além disso, no campo “Motivo da Ocorrência”,
-     * posição 214 a 223, haverá a mensagem “A4 – Sacado DDA”.
-     * POSICAO 214 223
-     */
-    public static final String IDENTIFICACAO_REJEICOES_OUTROS = "IDENTIFICACAO_REJEICOES_OUTROS";
+    public static final String VALOR_JUROS_DIAS_ATRASO = "VALOR_JUROS_DIAS_ATRASO";
 
     /**
-     * USO EXCLUSIVO FEBRABAN
+     * MENSAGEM 1
      * POSICAO 224 240
-     * CONTEUDO BRANCOS
      */
-    public static final String EXCLUSIVO_FEBRABAN_2 = "EXCLUSIVO_FEBRABAN_2";
+    public static final String MENSAGEM_1 = "MENSAGEM_1";
+    /**
+     * MENSAGEM 2
+     * POSICAO 224 240
+     */
+    public static final String MENSAGEM_2 = "MENSAGEM_2";
 
     public LineCnab240BBSegmentoH() {
 
@@ -219,29 +164,21 @@ public class LineCnab240BBSegmentoH extends LineArchetype {
         addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("H"));
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));
         addFieldArchetype(CODIGO_MOVIMENTO_RETORNO, new FieldIntegerFixedLengthArchetype(2));
-        addFieldArchetype(AGENCIA_MANTENEDORA, new FieldIntegerFixedLengthArchetype(5));
-        addFieldArchetype(DIGITO_VERIFICADOR_AGENCIA, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(NUMERO_CONTA_CORRENTE, new FieldIntegerFixedLengthArchetype(12));
-        addFieldArchetype(DIGITO_VERIFICADOR_CONTA, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(DIGITO_VERIFICADOR_CONTA_AGENCIA, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(IDENTIFICACAO_TITULO, new FieldStringFixedLengthArchetype(20));
-        addFieldArchetype(CODIGO_CARTEIRA, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(NUMERO_DOC_COBRANCA, new FieldStringFixedLengthArchetype(15));
-        addFieldArchetype(DATA_VENCIMENTO_TITULO, new FieldDateFixedLengthArchetype("ddMMyyyy"));
-        addFieldArchetype(VALOR_NOMINAL, new FieldDecimalFixedLengthArchetype(15, 2));
-        addFieldArchetype(NUMERO_BANCO, new FieldIntegerFixedLengthArchetype(3));
-        addFieldArchetype(AGENCIA_COBRADORA_RECEBEDORA, new FieldIntegerFixedLengthArchetype(5));
-        addFieldArchetype(DIGITO_VERIFICADOR_AG_RECEBEDORA, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(IDENTIFICACAO_TITULO_EMPRESA, new FieldStringFixedLengthArchetype(25));
-        addFieldArchetype(CODIGO_MOEDA, new FieldIntegerFixedLengthArchetype(2));
-        addFieldArchetype(TIPO_INSCRICAO, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(NUMERO_INSCRICAO, new FieldIntegerFixedLengthArchetype(15));
-        addFieldArchetype(NOME, new FieldStringFixedLengthArchetype(40));
-        addFieldArchetype(NUM_CONTRATANTE_OPERACAO_CREDITO, new FieldIntegerFixedLengthArchetype(10));
-        addFieldArchetype(VALOR_TARIFA_CUSTAS, new FieldDecimalFixedLengthArchetype(15,2));
-        addFieldArchetype(IDENTIFICACAO_REJEICOES_OUTROS, new FieldIntegerFixedLengthArchetype(10));
-        addFieldArchetype(EXCLUSIVO_FEBRABAN_2, new FieldFillerArchetype(17, ' '));
-
+        addFieldArchetype(INSCRICAO_SACADOR, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(NUMERO_INSCRICAO_SACADOR, new FieldIntegerFixedLengthArchetype(15));
+        addFieldArchetype(NOME_SACADOR, new FieldStringFixedLengthArchetype(40));
+        addFieldArchetype(CODIGO_DESCONTO_1, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(DATA_DESCONTO_1, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        addFieldArchetype(VALOR_PERC_DESCONTO_1, new FieldDecimalFixedLengthArchetype(15,2));
+        addFieldArchetype(CODIGO_DESCONTO_2, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(DATA_DESCONTO_2, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        addFieldArchetype(VALOR_PERC_DESCONTO_2, new FieldDecimalFixedLengthArchetype(15,2));
+        addFieldArchetype(CODIGO_MULTA, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(DATA_MULTA, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        addFieldArchetype(VALOR_PERC_MULTA, new FieldDecimalFixedLengthArchetype(15,2));
+        addFieldArchetype(VALOR_JUROS_DIAS_ATRASO, new FieldDecimalFixedLengthArchetype(25));
+        addFieldArchetype(MENSAGEM_1, new FieldStringFixedLengthArchetype(40));
+        addFieldArchetype(MENSAGEM_2, new FieldStringFixedLengthArchetype(40));
     }
 }
 
