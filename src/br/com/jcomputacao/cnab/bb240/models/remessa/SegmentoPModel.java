@@ -11,20 +11,20 @@ package br.com.jcomputacao.cnab.bb240.models.remessa;
  */
 public class SegmentoPModel {
 
-    private int numeroLote = 0;
-    private int numeroSequencial = 0;
-    private int codigoRemessa = 0;
-    private int numeroAgencia = 0;
+    private long numeroLote = 0;
+    private long numeroSequencial = 0;
+    private long codigoRemessa = 0;
+    private long numeroAgencia = 0;
     private char digitoVerificadorAgencia = ' ';
-    private int numeroContaCorrente = 0;
+    private long numeroContaCorrente = 0;
     private char digitoVerificadorContaCorrente = ' ';
     private String identificacaoTituloBanco = "";
 
-    public int getCodigoRemessa() {
+    public long getCodigoRemessa() {
         return codigoRemessa;
     }
 
-    public void setCodigoRemessa(int codigoRemessa) {
+    public void setCodigoRemessa(long codigoRemessa) {
         this.codigoRemessa = codigoRemessa;
     }
 
@@ -52,35 +52,35 @@ public class SegmentoPModel {
         this.identificacaoTituloBanco = identificacaoTituloBanco;
     }
 
-    public int getNumeroAgencia() {
+    public long getNumeroAgencia() {
         return numeroAgencia;
     }
 
-    public void setNumeroAgencia(int numeroAgencia) {
+    public void setNumeroAgencia(long numeroAgencia) {
         this.numeroAgencia = numeroAgencia;
     }
 
-    public int getNumeroContaCorrente() {
+    public long getNumeroContaCorrente() {
         return numeroContaCorrente;
     }
 
-    public void setNumeroContaCorrente(int numeroContaCorrente) {
+    public void setNumeroContaCorrente(long numeroContaCorrente) {
         this.numeroContaCorrente = numeroContaCorrente;
     }
 
-    public int getNumeroLote() {
+    public long getNumeroLote() {
         return numeroLote;
     }
 
-    public void setNumeroLote(int numeroLote) {
+    public void setNumeroLote(long numeroLote) {
         this.numeroLote = numeroLote;
     }
 
-    public int getNumeroSequencial() {
+    public long getNumeroSequencial() {
         return numeroSequencial;
     }
 
-    public void setNumeroSequencial(int numeroSequencial) {
+    public void setNumeroSequencial(long numeroSequencial) {
         this.numeroSequencial = numeroSequencial;
     }
 }

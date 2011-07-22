@@ -13,37 +13,37 @@ import java.util.Date;
  */
 public class HeaderLoteModel {
 
-    private int loteServico = 0;
+    private long loteServico = 0;
     private char tipoOperacao = ' ';
-    private int tipoInscricao = 0;
-    private int numeroInscricao = 0;
-    private int numeroConvenioCobranca = 0;
-    private int cobrancaCedente = 0;
-    private int numeroCarteiraCobranca = 0;
-    private int numeroVariacaoCarteiraCobranca =0;
+    private long tipoInscricao = 0;
+    private long numeroInscricao = 0;
+    private long numeroConvenioCobranca = 0;
+    private long cobrancaCedente = 0;
+    private long numeroCarteiraCobranca = 0;
+    private long numeroVariacaoCarteiraCobranca =0;
     private String remessaTeste = "";
-    private int agenciaMantenedora = 0;
+    private long agenciaMantenedora = 0;
     private char digitoVerificadorAgencia = ' ';
-    private int numeroContaCorrente = 0;
+    private long numeroContaCorrente = 0;
     private char digitoVerificadorContaCorrente = ' ';
     private String nomeEmpresa = "";
     private String mensagem1 = "";
-    private int numeroRemessaRetorno = 0;
+    private long numeroRemessaRetorno = 0;
     private Date dataGravacaoRemessaRetorno = null;
 
-    public int getAgenciaMantenedora() {
+    public long getAgenciaMantenedora() {
         return agenciaMantenedora;
     }
 
-    public void setAgenciaMantenedora(int agenciaMantenedora) {
+    public void setAgenciaMantenedora(long agenciaMantenedora) {
         this.agenciaMantenedora = agenciaMantenedora;
     }
 
-    public int getCobrancaCedente() {
+    public long getCobrancaCedente() {
         return cobrancaCedente;
     }
 
-    public void setCobrancaCedente(int cobrancaCedente) {
+    public void setCobrancaCedente(long cobrancaCedente) {
         this.cobrancaCedente = cobrancaCedente;
     }
 
@@ -71,11 +71,11 @@ public class HeaderLoteModel {
         this.digitoVerificadorContaCorrente = digitoVerificadorContaCorrente;
     }
 
-    public int getLoteServico() {
+    public long getLoteServico() {
         return loteServico;
     }
 
-    public void setLoteServico(int loteServico) {
+    public void setLoteServico(long loteServico) {
         this.loteServico = loteServico;
     }
 
@@ -95,51 +95,51 @@ public class HeaderLoteModel {
         this.nomeEmpresa = nomeEmpresa;
     }
 
-    public int getNumeroCarteiraCobranca() {
+    public long getNumeroCarteiraCobranca() {
         return numeroCarteiraCobranca;
     }
 
-    public void setNumeroCarteiraCobranca(int numeroCarteiraCobranca) {
+    public void setNumeroCarteiraCobranca(long numeroCarteiraCobranca) {
         this.numeroCarteiraCobranca = numeroCarteiraCobranca;
     }
 
-    public int getNumeroContaCorrente() {
+    public long getNumeroContaCorrente() {
         return numeroContaCorrente;
     }
 
-    public void setNumeroContaCorrente(int numeroContaCorrente) {
+    public void setNumeroContaCorrente(long numeroContaCorrente) {
         this.numeroContaCorrente = numeroContaCorrente;
     }
 
-    public int getNumeroConvenioCobranca() {
+    public long getNumeroConvenioCobranca() {
         return numeroConvenioCobranca;
     }
 
-    public void setNumeroConvenioCobranca(int numeroConvenioCobranca) {
+    public void setNumeroConvenioCobranca(long numeroConvenioCobranca) {
         this.numeroConvenioCobranca = numeroConvenioCobranca;
     }
 
-    public int getNumeroInscricao() {
+    public long getNumeroInscricao() {
         return numeroInscricao;
     }
 
-    public void setNumeroInscricao(int numeroInscricao) {
+    public void setNumeroInscricao(long numeroInscricao) {
         this.numeroInscricao = numeroInscricao;
     }
 
-    public int getNumeroRemessaRetorno() {
+    public long getNumeroRemessaRetorno() {
         return numeroRemessaRetorno;
     }
 
-    public void setNumeroRemessaRetorno(int numeroRemessaRetorno) {
+    public void setNumeroRemessaRetorno(long numeroRemessaRetorno) {
         this.numeroRemessaRetorno = numeroRemessaRetorno;
     }
 
-    public int getNumeroVariacaoCarteiraCobranca() {
+    public long getNumeroVariacaoCarteiraCobranca() {
         return numeroVariacaoCarteiraCobranca;
     }
 
-    public void setNumeroVariacaoCarteiraCobranca(int numeroVariacaoCarteiraCobranca) {
+    public void setNumeroVariacaoCarteiraCobranca(long numeroVariacaoCarteiraCobranca) {
         this.numeroVariacaoCarteiraCobranca = numeroVariacaoCarteiraCobranca;
     }
 
@@ -151,11 +151,11 @@ public class HeaderLoteModel {
         this.remessaTeste = remessaTeste;
     }
 
-    public int getTipoInscricao() {
+    public long getTipoInscricao() {
         return tipoInscricao;
     }
 
-    public void setTipoInscricao(int tipoInscricao) {
+    public void setTipoInscricao(long tipoInscricao) {
         this.tipoInscricao = tipoInscricao;
     }
 

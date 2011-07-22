@@ -85,7 +85,7 @@ public class LineCnab240BBHeaderLote extends LineArchetype{
      * PICTURE 9(01)
      * CONTEUDO '1'=CPF / '2'=CNPJ
      */
-    public static final String CODIGO_INSCRICAO_2 = "CODIGO_INSCRICAO_2";
+    public static final String CODIGO_INSCRICAO = "CODIGO_INSCRICAO_2";
 
     /**
      * INSCRICAO NUMERO
@@ -95,7 +95,7 @@ public class LineCnab240BBHeaderLote extends LineArchetype{
      * PICTURE 9(15)
      * CONTEUDO NOTA 2
      */
-    public static final String INSCRICAO_NUMERO_2 = "INSCRICAO_NUMERO_2";
+    public static final String INSCRICAO_NUMERO = "INSCRICAO_NUMERO_2";
 
     /**
      * NUMERO DO CONVENIO DE COBRANCA
@@ -247,8 +247,8 @@ public class LineCnab240BBHeaderLote extends LineArchetype{
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldIntegerFixedLengthArchetype(2));
         addFieldArchetype(LAYOUT_LOTE, new FieldIntegerFixedLengthArchetype(3));
         addFieldArchetype(BRANCOS_LAYOUT_LOTE, new FieldDefaultArchetype(" "));
-        addFieldArchetype(CODIGO_INSCRICAO_2, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(INSCRICAO_NUMERO_2, new FieldIntegerFixedLengthArchetype(15));
+        addFieldArchetype(CODIGO_INSCRICAO, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(INSCRICAO_NUMERO, new FieldIntegerFixedLengthArchetype(15));
         addFieldArchetype(CONVENIO_COBRANCA, new FieldIntegerFixedLengthArchetype(9));
         addFieldArchetype(COBRANCA_CEDENTE, new FieldIntegerFixedLengthArchetype(4));
         addFieldArchetype(CARTEIRA_COBRANCA, new FieldIntegerFixedLengthArchetype(2));
