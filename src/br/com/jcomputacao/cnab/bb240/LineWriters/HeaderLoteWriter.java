@@ -15,7 +15,7 @@ import br.com.jcomputacao.cnab.bb240.models.remessa.HeaderLoteModel;
  */
 public class HeaderLoteWriter{
 
-    public LineModel getHeaderLoteLine(HeaderLoteModel hlm){
+    public static LineModel getHeaderLoteLine(HeaderLoteModel hlm){
       LineModel line = new LineCnab240BBHeaderLote().createModel();
       line.setFieldValue(LineCnab240BBHeaderLote.AGENCIA_MANTENEDORA, hlm.getAgenciaMantenedora());
       line.setFieldValue(LineCnab240BBHeaderLote.COBRANCA_CEDENTE, hlm.getCobrancaCedente());

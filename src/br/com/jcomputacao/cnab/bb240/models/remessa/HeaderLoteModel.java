@@ -17,7 +17,7 @@ public class HeaderLoteModel {
     private char tipoOperacao = ' ';
     private long tipoInscricao = 0;
     private long numeroInscricao = 0;
-    private long numeroConvenioCobranca = 0;
+    private String numeroConvenioCobranca = "";
     private long cobrancaCedente = 0;
     private long numeroCarteiraCobranca = 0;
     private long numeroVariacaoCarteiraCobranca =0;
@@ -111,11 +111,11 @@ public class HeaderLoteModel {
         this.numeroContaCorrente = numeroContaCorrente;
     }
 
-    public long getNumeroConvenioCobranca() {
+    public String getNumeroConvenioCobranca() {
         return numeroConvenioCobranca;
     }
 
-    public void setNumeroConvenioCobranca(long numeroConvenioCobranca) {
+    public void setNumeroConvenioCobranca(String numeroConvenioCobranca) {
         this.numeroConvenioCobranca = numeroConvenioCobranca;
     }
 

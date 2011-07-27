@@ -15,7 +15,7 @@ import br.com.jcomputacao.cnab.bb240.models.remessa.SegmentoRModel;
  */
 public class SegmentoRWriter {
 
-    public LineModel getSegmentoRLine(SegmentoRModel srm){
+    public static LineModel getSegmentoRLine(SegmentoRModel srm){
         LineModel line = new LineCnab240BBSegmentoR().createModel();
         line.setFieldValue(LineCnab240BBSegmentoR.CODIGO_MULTA, srm.getCodigoMulta());
         line.setFieldValue(LineCnab240BBSegmentoR.DATA_MULTA, srm.getDataMulta());

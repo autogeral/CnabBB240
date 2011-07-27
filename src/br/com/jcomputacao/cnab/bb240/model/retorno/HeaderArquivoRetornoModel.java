@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Marcos
  */
-public class HeaderArquivoModel {
+public class HeaderArquivoRetornoModel {
 
 private long prefixoBanco = 1;
 private long numeroLoteServico = 0;

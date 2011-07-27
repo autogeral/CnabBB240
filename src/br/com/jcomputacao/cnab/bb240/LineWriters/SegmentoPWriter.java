@@ -15,11 +15,11 @@ import br.com.jcomputacao.cnab.bb240.models.remessa.SegmentoPModel;
  */
 public class SegmentoPWriter {
 
-    public LineModel getSegmentoPLine(SegmentoPModel la){
+    public static LineModel getSegmentoPLine(SegmentoPModel la){
         LineModel line = new LineCnab240BBSegmentoP().createModel();
         line.setFieldValue(LineCnab240BBSegmentoP.CODIGO_MOVIMENTO_REMESSA, la.getCodigoRemessa());
-        line.setFieldValue(LineCnab240BBSegmentoP.DIGITO_VERIFICADOR_AGENCIA, la.getDigitoVerificadorAgencia());
-        line.setFieldValue(LineCnab240BBSegmentoP.DIGITO_VERIFICADOR_CONTA, la.getDigitoVerificadorContaCorrente());
+        line.setFieldValue(LineCnab240BBSegmentoP.DIGITO_VERIFICADOR_AGENCIA, String.valueOf(la.getDigitoVerificadorAgencia()));
+        line.setFieldValue(LineCnab240BBSegmentoP.DIGITO_VERIFICADOR_CONTA, String.valueOf(la.getDigitoVerificadorContaCorrente()));
         line.setFieldValue(LineCnab240BBSegmentoP.IDENTIFICACAO_TITULO_BANCO, la.getIdentificacaoTituloBanco());
         line.setFieldValue(LineCnab240BBSegmentoP.AGENCIA_MANTENEDORA, la.getNumeroAgencia());
         line.setFieldValue(LineCnab240BBSegmentoP.NUMERO_CONTA, la.getNumeroContaCorrente());

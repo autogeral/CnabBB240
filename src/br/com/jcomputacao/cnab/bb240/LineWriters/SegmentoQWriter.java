@@ -15,7 +15,7 @@ import br.com.jcomputacao.cnab.bb240.models.remessa.SegmentoQModel;
  */
 public abstract class SegmentoQWriter {
 
-    public LineModel getSegmentoQLine(SegmentoQModel soq){
+    public static LineModel getSegmentoQLine(SegmentoQModel soq){
         LineModel line = new LineCnab240BBSegmentoQ().createModel();
         line.setFieldValue(LineCnab240BBSegmentoQ.BAIRRO, soq.getBairro());
         line.setFieldValue(LineCnab240BBSegmentoQ.CIDADE, soq.getCidade());

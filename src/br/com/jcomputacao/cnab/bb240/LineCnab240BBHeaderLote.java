@@ -5,6 +5,7 @@
 
 package br.com.jcomputacao.cnab.bb240;
 
+import br.com.jcomputacao.aristoteles.field.FieldDateFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldFillerArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldIntegerFixedLengthArchetype;
@@ -239,17 +240,17 @@ public class LineCnab240BBHeaderLote extends LineArchetype{
         public LineCnab240BBHeaderLote() {
 
 //*****************************Registro Header de Lote****************************************
-        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldIntegerFixedLengthArchetype(3));
+        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldDefaultArchetype("001"));
         addFieldArchetype(CODIGO_DO_LOTE, new FieldIntegerFixedLengthArchetype(4));
-        addFieldArchetype(TIPO_DE_REGISTRO, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(TIPO_DE_REGISTRO, new FieldDefaultArchetype("1"));
         addFieldArchetype(OPERACAO, new FieldStringFixedLengthArchetype(1));
-        addFieldArchetype(CODIGO_SERVICO, new FieldIntegerFixedLengthArchetype(2));
-        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldIntegerFixedLengthArchetype(2));
-        addFieldArchetype(LAYOUT_LOTE, new FieldIntegerFixedLengthArchetype(3));
+        addFieldArchetype(CODIGO_SERVICO, new FieldDefaultArchetype("01"));
+        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldDefaultArchetype("  "));
+        addFieldArchetype(LAYOUT_LOTE, new FieldDefaultArchetype("042"));
         addFieldArchetype(BRANCOS_LAYOUT_LOTE, new FieldDefaultArchetype(" "));
         addFieldArchetype(CODIGO_INSCRICAO, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(INSCRICAO_NUMERO, new FieldIntegerFixedLengthArchetype(15));
-        addFieldArchetype(CONVENIO_COBRANCA, new FieldIntegerFixedLengthArchetype(9));
+        addFieldArchetype(CONVENIO_COBRANCA, new FieldStringFixedLengthArchetype(9));
         addFieldArchetype(COBRANCA_CEDENTE, new FieldIntegerFixedLengthArchetype(4));
         addFieldArchetype(CARTEIRA_COBRANCA, new FieldIntegerFixedLengthArchetype(2));
         addFieldArchetype(VARIACAO_CARTEIRA_COBRANCA, new FieldIntegerFixedLengthArchetype(3));
@@ -263,7 +264,7 @@ public class LineCnab240BBHeaderLote extends LineArchetype{
         addFieldArchetype(MENSAGEM_1, new FieldStringFixedLengthArchetype(40));
         addFieldArchetype(MENSAGEM_2, new FieldFillerArchetype(40, ' '));
         addFieldArchetype(N_SEQ_ARQUIVO_RET, new FieldIntegerFixedLengthArchetype(8));
-        addFieldArchetype(DATA_GRAVACAO_ARQUIVO, new FieldIntegerFixedLengthArchetype(8));
+        addFieldArchetype(DATA_GRAVACAO_ARQUIVO, new FieldDateFixedLengthArchetype("ddMMyyyy"));
         addFieldArchetype(DATA_DE_CREDITO, new FieldFillerArchetype(8, ' '));
         addFieldArchetype(BRANCOS, new FieldFillerArchetype(33, ' '));
 
