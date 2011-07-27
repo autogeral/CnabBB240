@@ -32,9 +32,11 @@ public class ArquivoRetornoReader{
             linha = buf.readLine();
             if(linha.charAt(13) == 'T'){
                 SegmentoTModel model = filtraTModel(linha);
+                lista.add(model);
             }
             if(linha.charAt(13) == 'U'){
                 SegmentoUModel model = filtraUModel(linha);
+                lista.add(model);
             }
         }
         return lista;
