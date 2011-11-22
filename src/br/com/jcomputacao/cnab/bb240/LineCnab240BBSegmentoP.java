@@ -254,7 +254,23 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
     public static final String CODIGO_BAIXA_DEVOLUCAO = "CODIGO_BAIXA_DEVOLUCAO";
     //225 a 227
     public static final String PRAZO_BAIXA_DEVOLUCAO = "PRAZO_BAIXA_DEVOLUCAO";
-    //228 A 229
+    /**
+     * Posição de 228 a 229
+     * '01' = Reservado para Uso Futuro
+     * '02' = Dólar Americano Comercial (Venda)
+     * '03' = Dólar Americano Turismo (Venda)
+     * '04' = ITRD
+     * '05' = IDTR
+     * '06' = UFIR Diária
+     * '07' = UFIR Mensal
+     * '08' = FAJ-TR
+     * '09' = Real
+     * '10' = TR
+     * '11' = IGPM
+     * '12' = CDI
+     * '13' = Percentual do CDI
+     * ‘14’ = Euro
+     **/
     public static final String MOEDA = "MOEDA";
     //230 A 239
     public static final String NUMERO_CONTRATO_OPERACAO_CREDITO = "";
