@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.jcomputacao.cnab.bb240;
 
 import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
@@ -178,7 +173,7 @@ public class LineCnab240BBSegmentoQ extends LineArchetype{
         addFieldArchetype(TIPO_DE_REGISTRO, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(SEQUENCIAL_REGISTRO, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("Q"));
-        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(4, ' '));
+        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));
         addFieldArchetype(CODIGO_MOVIMENTO_REMESSA, new FieldIntegerFixedLengthArchetype(2));
         addFieldArchetype(TIPO_INSCRICAO, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(CODIGO_INSCRICAO, new FieldIntegerFixedLengthArchetype(15));

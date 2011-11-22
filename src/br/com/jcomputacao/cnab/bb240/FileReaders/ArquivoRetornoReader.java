@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.jcomputacao.cnab.bb240.FileReaders;
 
 import br.com.jcomputacao.cnab.bb240.models.remessa.SegmentoTModel;
@@ -22,23 +17,26 @@ import java.util.List;
  *
  * @author Marcos
  */
-public class ArquivoRetornoReader{
+public class ArquivoRetornoReader {
 
-    public static List<Object> getArquivoModels(File file) throws FileNotFoundException, IOException, ParseException{
+    public static List<Object> getArquivoModels(File file) throws FileNotFoundException, IOException, ParseException {
         List<Object> lista = new LinkedList<Object>();
-        BufferedReader buf = new BufferedReader(new FileReader(file));
+        FileReader fr = new FileReader(file);
+        BufferedReader buf = new BufferedReader(fr);
         String linha = "";
-        while(buf.ready()){
+        while (buf.ready()) {
             linha = buf.readLine();
-            if(linha.charAt(13) == 'T'){
+            if (linha.charAt(13) == 'T') {
                 SegmentoTModel model = filtraTModel(linha);
                 lista.add(model);
             }
-            if(linha.charAt(13) == 'U'){
+            if (linha.charAt(13) == 'U') {
                 SegmentoUModel model = filtraUModel(linha);
                 lista.add(model);
             }
         }
+        buf.close();
+        fr.close();
         return lista;
     }
 
@@ -54,7 +52,7 @@ public class ArquivoRetornoReader{
         model.setNumeroCodigoCarteira(Long.parseLong(linha.substring(57, 57)));
         model.setNumeroCodigoMoeda(Long.parseLong(linha.substring(130, 131)));
         model.setNumeroCodigoRetorno(Long.parseLong(linha.substring(15, 16)));
-        model.setNumeroContaCorrente(Long.parseLong(linha.substring(23 , 34)));
+        model.setNumeroContaCorrente(Long.parseLong(linha.substring(23, 34)));
         model.setNumeroDigitoVerificadorAgencia(Long.parseLong(linha.substring(22, 22)));
         model.setNumeroDigitoVerificadorAgenciaCobRec(Long.parseLong(linha.substring(104, 104)));
         model.setNumeroDigitoVerificadorAgenciaContaCorrente(Long.parseLong(linha.substring(36, 36)));
@@ -75,7 +73,7 @@ public class ArquivoRetornoReader{
         model.setNumeroLoteServico(Long.parseLong(linha.substring(3, 6)));
         model.setNumeroSequencial(Long.parseLong(linha.substring(8, 12)));
         model.setValorAbatimentoConcedCancel(DoubleUtil.getDouble2Dec(linha.substring(47, 61)));
-        model.setValorDesconto(DoubleUtil.getDouble2Dec(linha.substring(32,46)));
+        model.setValorDesconto(DoubleUtil.getDouble2Dec(linha.substring(32, 46)));
         model.setValorIOF(DoubleUtil.getDouble2Dec(linha.substring(62, 76)));
         model.setValorJurosMultaEncargos(DoubleUtil.getDouble2Dec(linha.substring(17, 31)));
         model.setValorLiquidoCreditado(DoubleUtil.getDouble2Dec(linha.substring(92, 106)));
@@ -84,7 +82,4 @@ public class ArquivoRetornoReader{
         model.setValorPagoSacado(DoubleUtil.getDouble2Dec(linha.substring(77, 91)));
         return model;
     }
-
-
-
 }

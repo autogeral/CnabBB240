@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.jcomputacao.cnab.bb240;
 
 import br.com.jcomputacao.aristoteles.field.FieldDateFixedLengthArchetype;
@@ -69,18 +64,57 @@ public class LineCnab240BBSegmentoR extends LineArchetype{
      */
     public static final String CODIGO_MOVIMENTO_REMESSA = "CODIGO_MOVIMENTO_REMESSA";
 
-    /**
-     * SERIE DE CAMPOS NAO TRATADOS NO BB
-     * INFORMADOS EM BRANCOS
-     * 44 espaços ' '
-     * POSICAO 018 065
-     */
-    public static final String BRANCOS_1 = "BRANCOS_1";
 
     /**
      * CODIGO DA MULTA
      * POSICAO 066 066
      * PICTURE 9(01)
+     * '1' = Valor Fixo Até a Data Informada
+     * '2' = Percentual Até a Data Informada
+     * '3' = Valor por Antecipação Dia Corrido
+     */
+    public static final String CODIGO_DESCONTO_2 = "CODIGO_DESCONTO_2";
+
+    /**
+     * DATA DA MULTA
+     * POSICAO 067 074
+     */
+    public static final String DATA_DESCONTO_2 = "DATA_DESCONTO_2";
+
+    /**
+     * VALOR PERCENTUAL DA MULTA
+     * POSICAO 075 089
+     */
+    public static final String VALOR_PERCENTUAL_DESCONTO_2 = "VALOR_PERCENTUAL_DESCONTO_2";
+
+    /**
+     * CODIGO DA MULTA
+     * POSICAO 066 066
+     * PICTURE 9(01)
+     * '1' = Valor Fixo Até a Data Informada
+     * '2' = Percentual Até a Data Informada
+     * '3' = Valor por Antecipação Dia Corrido
+     */
+    public static final String CODIGO_DESCONTO_3 = "CODIGO_DESCONTO_3";
+
+    /**
+     * DATA DA MULTA
+     * POSICAO 067 074
+     */
+    public static final String DATA_DESCONTO_3 = "DATA_DESCONTO_3";
+
+    /**
+     * VALOR PERCENTUAL DA MULTA
+     * POSICAO 075 089
+     */
+    public static final String VALOR_PERCENTUAL_DESCONTO_3 = "VALOR_PERCENTUAL_DESCONTO_3";
+    /**
+     * CODIGO DA MULTA
+     * POSICAO 066 066
+     * PICTURE 9(01)
+     * '1' = Valor Fixo Até a Data Informada
+     * '2' = Percentual Até a Data Informada
+     * '3' = Valor por Antecipação Dia Corrido
      */
     public static final String CODIGO_MULTA = "CODIGO_MULTA";
 
@@ -91,10 +125,10 @@ public class LineCnab240BBSegmentoR extends LineArchetype{
     public static final String DATA_MULTA = "DATA_MULTA";
 
     /**
-     * VALOR DA MULTA
+     * VALOR PERCENTUAL DA MULTA
      * POSICAO 075 089
      */
-    public static final String VALOR_MULTA = "VALOR_MULTA";
+    public static final String VALOR_PERCENTUAL_MULTA = "VALOR_PERCENTUAL_MULTA";
 
     /**
      * INFORMACOES DO SACADO
@@ -157,10 +191,15 @@ public class LineCnab240BBSegmentoR extends LineArchetype{
         addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("R"));
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));
         addFieldArchetype(CODIGO_MOVIMENTO_REMESSA, new FieldIntegerFixedLengthArchetype(2));
-        addFieldArchetype(BRANCOS_1, new FieldFillerArchetype(44, ' '));
+        addFieldArchetype(CODIGO_DESCONTO_2, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(DATA_DESCONTO_2, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        addFieldArchetype(VALOR_PERCENTUAL_DESCONTO_2, new FieldDecimalFixedLengthArchetype(13, 2));
+        addFieldArchetype(CODIGO_DESCONTO_3, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(DATA_DESCONTO_3, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        addFieldArchetype(VALOR_PERCENTUAL_DESCONTO_3, new FieldDecimalFixedLengthArchetype(13, 2));
         addFieldArchetype(CODIGO_MULTA, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(DATA_MULTA, new FieldDateFixedLengthArchetype("ddMMyyyy"));
-        addFieldArchetype(VALOR_MULTA, new FieldDecimalFixedLengthArchetype(13, 2));
+        addFieldArchetype(VALOR_PERCENTUAL_MULTA, new FieldDecimalFixedLengthArchetype(13, 2));
         addFieldArchetype(BRANCOS_2, new FieldFillerArchetype(10, ' '));
         addFieldArchetype(MENSAGEM_3, new FieldStringFixedLengthArchetype(40));
         addFieldArchetype(MENSAGEM_4, new FieldFillerArchetype(40, ' '));
