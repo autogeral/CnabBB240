@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.jcomputacao.cnab.bb240;
 
 import br.com.jcomputacao.aristoteles.field.FieldDateFixedLengthArchetype;
@@ -171,7 +167,7 @@ public class LineCnab240BBSegmentoU extends LineArchetype {
         addFieldArchetype(VALOR_CREDITOS, new FieldDecimalFixedLengthArchetype(15,2));
         addFieldArchetype(DATA_OCORRENCIA_1, new FieldDateFixedLengthArchetype("ddMMyyyy"));
         addFieldArchetype(DATA_EFETIVACAO_CREDITO, new FieldDateFixedLengthArchetype("ddMMyyyy"));
-        addFieldArchetype(CODIGO_OCORRENCIA, new FieldIntegerFixedLengthArchetype(4));
+        addFieldArchetype(CODIGO_OCORRENCIA, new FieldStringFixedLengthArchetype(4));
         addFieldArchetype(DATA_OCORRENCIA_2, new FieldDateFixedLengthArchetype("ddMMyyyy"));
         addFieldArchetype(VALOR_OCORRENCIA, new FieldDecimalFixedLengthArchetype(15,2));
         addFieldArchetype(COMPLEMENTO_OCORRENCIA, new FieldStringFixedLengthArchetype(30));

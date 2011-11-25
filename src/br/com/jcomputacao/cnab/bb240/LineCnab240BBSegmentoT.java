@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.jcomputacao.cnab.bb240;
 
 import br.com.jcomputacao.aristoteles.field.FieldDateFixedLengthArchetype;
@@ -230,14 +225,15 @@ public class LineCnab240BBSegmentoT extends LineArchetype {
         addFieldArchetype(CODIGO_DO_LOTE, new FieldIntegerFixedLengthArchetype(4));
         addFieldArchetype(TIPO_DE_REGISTRO, new FieldDefaultArchetype("3"));
         addFieldArchetype(SEQUENCIAL_REGISTRO, new FieldStringFixedLengthArchetype(5));
-        addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("U"));
+        addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("T"));
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));
         addFieldArchetype(CODIGO_MOVIMENTO_RETORNO, new FieldIntegerFixedLengthArchetype(2));
         addFieldArchetype(AGENCIA_MANTENEDORA, new FieldIntegerFixedLengthArchetype(5));
         addFieldArchetype(DIGITO_VERIFICADOR_AGENCIA, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(NUMERO_CONTA_CORRENTE, new FieldIntegerFixedLengthArchetype(12));
         addFieldArchetype(DIGITO_VERIFICADOR_CONTA, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(DIGITO_VERIFICADOR_CONTA_AGENCIA, new FieldIntegerFixedLengthArchetype(1));
+        //addFieldArchetype(DIGITO_VERIFICADOR_CONTA_AGENCIA, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(DIGITO_VERIFICADOR_CONTA_AGENCIA, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(IDENTIFICACAO_TITULO, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(CODIGO_CARTEIRA, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(NUMERO_DOC_COBRANCA, new FieldStringFixedLengthArchetype(15));
@@ -253,7 +249,7 @@ public class LineCnab240BBSegmentoT extends LineArchetype {
         addFieldArchetype(NOME, new FieldStringFixedLengthArchetype(40));
         addFieldArchetype(NUM_CONTRATANTE_OPERACAO_CREDITO, new FieldIntegerFixedLengthArchetype(10));
         addFieldArchetype(VALOR_TARIFA_CUSTAS, new FieldDecimalFixedLengthArchetype(15,2));
-        addFieldArchetype(IDENTIFICACAO_REJEICOES_OUTROS, new FieldIntegerFixedLengthArchetype(10));
+        addFieldArchetype(IDENTIFICACAO_REJEICOES_OUTROS, new FieldStringFixedLengthArchetype(10));
         addFieldArchetype(EXCLUSIVO_FEBRABAN_2, new FieldFillerArchetype(17, ' '));
 
     }
