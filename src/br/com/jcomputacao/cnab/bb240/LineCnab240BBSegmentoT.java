@@ -241,7 +241,7 @@ public class LineCnab240BBSegmentoT extends LineArchetype {
         addFieldArchetype(VALOR_NOMINAL, new FieldDecimalFixedLengthArchetype(15, 2));
         addFieldArchetype(NUMERO_BANCO, new FieldIntegerFixedLengthArchetype(3));
         addFieldArchetype(AGENCIA_COBRADORA_RECEBEDORA, new FieldIntegerFixedLengthArchetype(5));
-        addFieldArchetype(DIGITO_VERIFICADOR_AG_RECEBEDORA, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(DIGITO_VERIFICADOR_AG_RECEBEDORA, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(IDENTIFICACAO_TITULO_EMPRESA, new FieldStringFixedLengthArchetype(25));
         addFieldArchetype(CODIGO_MOEDA, new FieldIntegerFixedLengthArchetype(2));
         addFieldArchetype(TIPO_INSCRICAO, new FieldIntegerFixedLengthArchetype(1));
