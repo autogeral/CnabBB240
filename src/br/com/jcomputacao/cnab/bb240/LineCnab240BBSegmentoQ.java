@@ -169,27 +169,47 @@ public class LineCnab240BBSegmentoQ extends LineArchetype{
 
 //*****************************Registro Header de Lote****************************************
         addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldIntegerFixedLengthArchetype(3));
+        
         addFieldArchetype(CODIGO_DO_LOTE, new FieldIntegerFixedLengthArchetype(4));
+        
         addFieldArchetype(TIPO_DE_REGISTRO, new FieldIntegerFixedLengthArchetype(1));
+       
         addFieldArchetype(SEQUENCIAL_REGISTRO, new FieldStringFixedLengthArchetype(5));
+        
         addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("Q"));
+        
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));
+        
         addFieldArchetype(CODIGO_MOVIMENTO_REMESSA, new FieldIntegerFixedLengthArchetype(2));
+        
         addFieldArchetype(TIPO_INSCRICAO, new FieldIntegerFixedLengthArchetype(1));
+        
         addFieldArchetype(CODIGO_INSCRICAO, new FieldIntegerFixedLengthArchetype(15));
+        
         addFieldArchetype(NOME, new FieldStringFixedLengthArchetype(40));
+        
         addFieldArchetype(ENDERECO, new FieldStringFixedLengthArchetype(40));
+        
         addFieldArchetype(BAIRRO, new FieldStringFixedLengthArchetype(15));
+        
         addFieldArchetype(CEP, new FieldIntegerFixedLengthArchetype(5));
+        
         addFieldArchetype(SUFIXO_CEP, new FieldIntegerFixedLengthArchetype(3));
+        
         addFieldArchetype(CIDADE, new FieldStringFixedLengthArchetype(15));
+        
         addFieldArchetype(UF, new FieldStringFixedLengthArchetype(2));
+        
         addFieldArchetype(TIPO_INSCRICAO_TERCEIRO, new FieldIntegerFixedLengthArchetype(1));
+        
         addFieldArchetype(NUMERO_INSCRICAO_TERCEIRO, new FieldIntegerFixedLengthArchetype(15));
+        
         addFieldArchetype(NOME_SACADOR, new FieldStringFixedLengthArchetype(40));
+        
         addFieldArchetype(CODIGO_BANCO_CORRESP, new FieldDefaultArchetype("000"));
+        
         addFieldArchetype(NOSSO_NUMERO, new FieldFillerArchetype(20, ' '));
-        addFieldArchetype(BRANCOS, new FieldFillerArchetype(8, ' '));
-
+        
+        addFieldArchetype(BRANCOS, new FieldFillerArchetype(8, ' '));        
     }
 }
