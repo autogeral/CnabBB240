@@ -185,26 +185,48 @@ public class LineCnab240BBSegmentoR extends LineArchetype{
 
 //*****************************Segmento R****************************************
         addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldDefaultArchetype("001"));
+        
         addFieldArchetype(CODIGO_DO_LOTE, new FieldIntegerFixedLengthArchetype(4));
+        
+        
         addFieldArchetype(TIPO_DE_REGISTRO, new FieldDefaultArchetype("3"));
+        
         addFieldArchetype(SEQUENCIAL_REGISTRO, new FieldStringFixedLengthArchetype(5));
+        
         addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("R"));
+        
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));
+        
         addFieldArchetype(CODIGO_MOVIMENTO_REMESSA, new FieldIntegerFixedLengthArchetype(2));
+        
         addFieldArchetype(CODIGO_DESCONTO_2, new FieldStringFixedLengthArchetype(1));
+        
         addFieldArchetype(DATA_DESCONTO_2, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        
         addFieldArchetype(VALOR_PERCENTUAL_DESCONTO_2, new FieldDecimalFixedLengthArchetype(13, 2));
+        
         addFieldArchetype(CODIGO_DESCONTO_3, new FieldStringFixedLengthArchetype(1));
+        
         addFieldArchetype(DATA_DESCONTO_3, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        
         addFieldArchetype(VALOR_PERCENTUAL_DESCONTO_3, new FieldDecimalFixedLengthArchetype(13, 2));
+        
         addFieldArchetype(CODIGO_MULTA, new FieldStringFixedLengthArchetype(1));
+        
         addFieldArchetype(DATA_MULTA, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        
         addFieldArchetype(VALOR_PERCENTUAL_MULTA, new FieldDecimalFixedLengthArchetype(13, 2));
+        
         addFieldArchetype(BRANCOS_2, new FieldFillerArchetype(10, ' '));
+        
         addFieldArchetype(MENSAGEM_3, new FieldStringFixedLengthArchetype(40));
+        
         addFieldArchetype(MENSAGEM_4, new FieldFillerArchetype(40, ' '));
+        
         addFieldArchetype(EXCLUSIVO_FEBRABAN_2, new FieldFillerArchetype(20, ' '));
+        
         addFieldArchetype(ZEROS, new FieldFillerArchetype(32, '0'));
+        
         addFieldArchetype(BRANCOS, new FieldFillerArchetype(9, ' '));
 
     }
