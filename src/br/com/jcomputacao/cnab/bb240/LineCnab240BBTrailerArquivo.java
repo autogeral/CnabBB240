@@ -8,6 +8,7 @@ package br.com.jcomputacao.cnab.bb240;
 import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldFillerArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldIntegerFixedLengthArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
 
 /**
@@ -95,6 +96,6 @@ public class LineCnab240BBTrailerArquivo extends LineArchetype{
          addFieldArchetype(BRANCOS_REGISTRO_TRAILER_ARQUIVO, new FieldFillerArchetype(9, ' '));
          addFieldArchetype(TOTAL_LOTES_ARQUIVO, new FieldIntegerFixedLengthArchetype(6));
          addFieldArchetype(TOTAL_REGISTROS_ARQUIVO, new FieldIntegerFixedLengthArchetype(6));
-         addFieldArchetype(TOTAL_LOTES_REGISTROS_BRANCOS, new FieldFillerArchetype(211, ' '));
+         addFieldArchetype(TOTAL_LOTES_REGISTROS_BRANCOS, new FieldStringFixedLengthArchetype(205));
     }
 }
