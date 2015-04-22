@@ -15,7 +15,6 @@ import br.com.jcomputacao.cnab.bb240.LineWriters.SegmentoRWriter;
 import br.com.jcomputacao.cnab.bb240.LineWriters.SegmentoSWriter;
 import br.com.jcomputacao.cnab.bb240.LineWriters.TraillerArquivoWriter;
 import br.com.jcomputacao.cnab.bb240.LineWriters.TraillerLoteWriter;
-import br.com.jcomputacao.cnab.bb240.model.retorno.TraillerArquivoRetornoModel;
 import br.com.jcomputacao.cnab.bb240.models.remessa.HeaderArquivoModel;
 import br.com.jcomputacao.cnab.bb240.models.remessa.HeaderLoteModel;
 import br.com.jcomputacao.cnab.bb240.models.remessa.SegmentoPModel;
@@ -57,7 +56,7 @@ public class ArquivoRemessaFileWriter extends FileArchetype{
                 file.addLine(TraillerLoteWriter.getTraillerLoteLine((TraillerLoteModel) ob ));
             }
             if(ob instanceof TraillerArquivoModel){
-                file.addLine(TraillerArquivoWriter.getTraillerArquivoWriter((TraillerArquivoRetornoModel) ob ));
+                file.addLine(TraillerArquivoWriter.getTraillerArquivoWriter((TraillerArquivoModel) ob ));
             }
         }
         return file;

@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class HeaderLoteModel {
 
-    private long loteServico = 0;
+    private long loteServico = 0;    
     private char tipoOperacao = ' ';
     private long tipoInscricao = 0;
     private long numeroInscricao = 0;
@@ -30,7 +30,7 @@ public class HeaderLoteModel {
     private String mensagem1 = "";
     private long numeroRemessaRetorno = 0;
     private Date dataGravacaoRemessaRetorno = null;
-
+    
     public long getAgenciaMantenedora() {
         return agenciaMantenedora;
     }

@@ -75,10 +75,7 @@ public class LineCnab240BBTrailerLote extends LineArchetype {
         addFieldArchetype(TIPO_REGISTRO_TRAILER, new FieldDefaultArchetype("5"));
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(9, ' '));
         addFieldArchetype(TOTAL_LOTES_REGISTROS, new FieldIntegerFixedLengthArchetype(6));
-        addFieldArchetype(SOMATORIA_VALORES, new FieldDecimalFixedLengthArchetype(16, 2));
-        addFieldArchetype(SOMATORIA_QUANTIDADE_MOEDA, new FieldDecimalFixedLengthArchetype(13, 5));
-        addFieldArchetype(NUMERO_AVISO_DEBITO, new FieldDecimalFixedLengthArchetype(6));
-        addFieldArchetype(EXCLUSIVO_FEBRABAN_2, new FieldStringFixedLengthArchetype(165));
-        addFieldArchetype(OCORRENCIAS, new FieldStringFixedLengthArchetype(10));
+        addFieldArchetype(EXCLUSIVO_FEBRABAN_2, new FieldStringFixedLengthArchetype(217));
+     
     }
 }
