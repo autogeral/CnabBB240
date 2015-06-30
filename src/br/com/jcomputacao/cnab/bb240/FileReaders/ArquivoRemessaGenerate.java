@@ -3,7 +3,6 @@ package br.com.jcomputacao.cnab.bb240.FileReaders;
 import br.com.jcomputacao.cnab.bb240.models.remessa.SegmentoTModel;
 import br.com.jcomputacao.cnab.bb240.models.remessa.SegmentoUModel;
 import br.com.jcomputacao.cnab.bb240.util.DoubleUtil;
-import br.com.jcomputacao.model.BoletoModel;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,13 +20,6 @@ import java.util.List;
  * @author Thiago
  */
 public class ArquivoRemessaGenerate  {
-
-    List<BoletoModel> boletos = new ArrayList<BoletoModel>();
-
-    public void geraArquivosBoletos(List<BoletoModel> boletos) {
-        this.boletos = boletos;
-        
-    }
 
     public static List<Object> getArquivoModels(File file) throws FileNotFoundException, IOException, ParseException {
         List<Object> lista = new LinkedList<Object>();
