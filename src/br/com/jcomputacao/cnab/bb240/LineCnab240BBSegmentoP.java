@@ -3,6 +3,7 @@ package br.com.jcomputacao.cnab.bb240;
 import br.com.jcomputacao.aristoteles.field.FieldDateFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldDecimalFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldFillerArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldIntegerFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
@@ -39,13 +40,43 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
      */
     public static final String EXCLUSIVO_FEBRABAN = "EXCLUSIVO_FEBRABAN";
     /**
-     * CODIGO DO MOVIMENTO DE REMESSA - NUMERICO Códigos de Movimento para
-     * Remessa tratados pelo Banco do Brasil: 01 – Entrada de títulos 02 –
-     * Pedido de baixa 04 – Concessão de Abatimento 05 – Cancelamento de
-     * Abatimento 06 – Alteração de Vencimento 07 – Concessão de Desconto 08 –
-     * Cancelamento de Desconto 09 – Protestar 10 – Cancela/Sustação da
-     * Instrução de protesto 30 – Recusa da Alegação do Sacado 31 – Alteração de
-     * Outros Dados 40 – Alteração de Modalidade. POSICAO 016 017 PICTURE 9(02)
+     * '01' = Entrada de Títulos 
+     * '02' = Pedido de Baixa 
+     * '03' = Protesto para Fins Falimentares 
+     * '04' = Concessão de Abatimento 
+     * '05' = Cancelamento de Abatimento 
+     * '06' = Alteração de Vencimento 
+     * '07' = Concessão de Desconto 
+     * '08' = Cancelamento de Desconto (NÃO TRATADO PELO BANCO) 
+     * '09' = Protestar 
+     * '10' = Sustar Protesto e Baixar Título
+     * '11' = Sustar Protesto e Manter em Carteira 
+     * '12' = Alteração de Juros de Mora
+     * '13' = Dispensar Cobrança de Juros de Mora 
+     * '14' = Alteração de Valor/Percentual de Multa 
+     * '15' = Dispensar Cobrança de Multa 
+     * '16' = Alteração do Valor de Desconto 
+     * '17' = Não conceder Desconto (NÃO TRATADO PELO BANCO) 
+     * '18' = Alteração do Valor de Abatimento 
+     * '19' = Prazo Limite de Recebimento – Alterar (NÃO TRATADO PELO BANCO) 
+     * '20' = Prazo Limite de Recebimento – Dispensar (NÃO TRATADO PELO BANCO) 
+     * '21' = Alterar número do título dado pelo beneficiario 
+     * '22' = Alterar número controle do Participante 
+     * '23' = Alterar dados do Pagador 
+     * '24' = Alterar dados do Sacador/Avalista 
+     * '30' = Recusa da Alegação do Pagador (NÃO TRATADO PELO BANCO) 
+     * '31' = Alteração de Outros Dados 
+     * '33' = Alteração dos Dados do Rateio de Crédito 
+     * '34' = Pedido de Cancelamento dos Dados do Rateio de Crédito
+     * '35' = Pedido de Desagendamento do Débito Automático 
+     * '40' = Alteração de Carteira (NÃO TRATADO PELO BANCO) 
+     * '41' = Cancelar protesto (NÃO TRATADO PELO BANCO) 
+     * '42' = Alteração de Espécie de Título 
+     * '43' = Transferência de carteira/modalidade de cobrança (NÃO TRATADO PELO BANCO) 
+     * '44' = Alteração de contrato de cobrança (NÃO TRATADO PELO BANCO) 
+     * '45' = Negativação Sem Protesto 
+     * '46' = Solicitação de Baixa de Título Negativado Sem Protesto 
+     * '47' = Solicitação Excluir negativação e manter pendente
      */
     public static final String CODIGO_MOVIMENTO_REMESSA = "CODIGO_MOVIMENTO_REMESSA";
     /**
@@ -69,9 +100,21 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
      */
     public static final String DIGITO_VERIFICADOR_AGENCIA_CONTA = "DIGITO_VERIFICADOR_AGENCIA_CONTA";
     /**
-     * IDENTIFICACAO DO TITULO NO BANCO POSICAO 038 057 20 POSICOES
+     * IDENTIFICACAO DO TITULO NO BANCO POSICAO 038 040 3 POSICOES
      */
     public static final String IDENTIFICACAO_TITULO_BANCO = "IDENTIFICACAO_TITULO_BANCO";
+    /**
+     * ZEROS POSICAO 041 045 5 POSICOES
+     */
+    public static final String ZEROS = "ZEROS";
+    /**
+     * NOSSO_NUMERO POSICAO 046 056 11 POSICOES
+     */
+    public static final String NOSSO_NUMERO = "NOSSO_NUMERO";
+    /**
+     * DIGITO_NOSSO_NUMERO POSICAO 057 057 1 POSICOES
+     */
+    public static final String DIGITO_NOSSO_NUMERO = "DIGITO_NOSSO_NUMERO";  
     /**
      * POSICAO 58
      *
@@ -220,7 +263,7 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
 
         addFieldArchetype(CODIGO_SEGMENTO_REGISTRO, new FieldDefaultArchetype("P"));
 
-        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldDefaultArchetype(" "));
+        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));
 
         addFieldArchetype(CODIGO_MOVIMENTO_REMESSA, new FieldIntegerFixedLengthArchetype(2));
 
@@ -234,7 +277,13 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
 
         addFieldArchetype(DIGITO_VERIFICADOR_AGENCIA_CONTA, new FieldStringFixedLengthArchetype(1));
 
-        addFieldArchetype(IDENTIFICACAO_TITULO_BANCO, new FieldStringFixedLengthArchetype(20));
+        addFieldArchetype(IDENTIFICACAO_TITULO_BANCO, new FieldStringFixedLengthArchetype(3));
+        
+        addFieldArchetype(ZEROS, new FieldDefaultArchetype("00000"));
+        
+        addFieldArchetype(NOSSO_NUMERO, new FieldIntegerFixedLengthArchetype(11));
+                
+        addFieldArchetype(DIGITO_NOSSO_NUMERO, new FieldIntegerFixedLengthArchetype(1));
 
         addFieldArchetype(CODIGO_CARTEIRA, new FieldIntegerFixedLengthArchetype(1));
 
@@ -292,7 +341,7 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
 
         addFieldArchetype(NUMERO_CONTRATO_OPERACAO_CREDITO, new FieldIntegerFixedLengthArchetype(10));
 
-        addFieldArchetype(BRANCOS_1, new FieldDefaultArchetype(" "));
+        addFieldArchetype(BRANCOS_1, new FieldFillerArchetype(1, ' '));
 
     }
 }

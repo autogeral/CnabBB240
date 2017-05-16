@@ -74,37 +74,13 @@ public class LineCnab240BBHeaderLote extends LineArchetype {
     public static final String INSCRICAO_NUMERO = "INSCRICAO_NUMERO_2";
 
     /**
-     * NUMERO DO CONVENIO DE COBRANCA POSICAO 034 042 PICTURE 9(9) CONTEUDO NOTA
+     * NUMERO DO CONVENIO DE COBRANCA POSICAO 034 053 PICTURE 9(9) CONTEUDO NOTA
      * 2
      */
     public static final String CONVENIO_COBRANCA = "CONVENIO_COBRANCA";
-
     /**
-     * COBRANCA CEDENTE BB POSICAO 043 046 PICTURE 9(4) CONTEUDO NOTA 2
-     */
-    public static final String COBRANCA_CEDENTE = "COBRANCA_CEDENTE";
-
-    /**
-     * NUMERO CARTEIRA COBRANCA POSICAO 047 048 PICTURE 9(2) CONTEUDO NOTA 2
-     */
-    public static final String CARTEIRA_COBRANCA = "CARTEIRA_COBRANCA";
-
-    /**
-     * VARIACAO DA CARTEIRA DE COBRANCA POSICAO 049 051 PICTURE 9(3) CONTEUDO
-     * NOTA 2
-     */
-    public static final String VARIACAO_CARTEIRA_COBRANCA = "VARIACAO_CARTEIRA_COBRANCA";
-
-    /**
-     * CAMPO PARA REMESSA DE TESTE CASO NAO FOR TESTE PREENCHER COM BRANCOS AO
-     * CONTRARIO PREENCHER COM TS POSICAO 052 053 PICTURE 9(2) CONTEUDO NOTA 2
-     */
-    public static final String CAMPO_REMESSA_TESTE = "CAMPO_REMESSA_TESTE";
-
-    /* AGENCIA
-     * AGENCIA MANTENEDORA DA CONTA
-     * POSICAO 054 058
-     * PICTURE 9(05)
+     * AGENCIA MANTENEDORA 054 058
+     * 
      */
     public static final String AGENCIA_MANTENEDORA = "AGENCIA_MANTENEDORA";
 
@@ -124,9 +100,9 @@ public class LineCnab240BBHeaderLote extends LineArchetype {
     public static final String DIGITO_VERIFICADOR_2 = "DIGITO_VERIFICADOR_2";
 
     /**
-     * COMPLEMENTO DE REGISTRO POSICAO 073 073 PICTURE X(01) CONTEUDO BRANCOS
+     * DIGITO VERIFICADOR DA AG/CONTA
      */
-    public static final String BRANCOS_CONTA_2 = "BRANCOS_CONTA_2";
+    public static final String DIGITO_VER_AG_CONTA = "DIGITO_VER_AG_CONTA";
 
     /**
      * NOME DA EMPRESA NOME DA EMPRESA POSICAO 074 103 PICTURE X(30)
@@ -179,28 +155,24 @@ public class LineCnab240BBHeaderLote extends LineArchetype {
     public LineCnab240BBHeaderLote() {
 
 //*****************************Registro Header de Lote****************************************
-        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldDefaultArchetype("001"));
+        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldStringFixedLengthArchetype(3));
         addFieldArchetype(CODIGO_DO_LOTE, new FieldIntegerFixedLengthArchetype(4));
         addFieldArchetype(TIPO_DE_REGISTRO, new FieldDefaultArchetype("1"));
         addFieldArchetype(OPERACAO, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(CODIGO_SERVICO, new FieldDefaultArchetype("01"));
-        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldDefaultArchetype("  "));
+        addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(2, ' '));
         addFieldArchetype(LAYOUT_LOTE, new FieldDefaultArchetype("042"));
-        addFieldArchetype(BRANCOS_LAYOUT_LOTE, new FieldDefaultArchetype(" "));
+        addFieldArchetype(BRANCOS_LAYOUT_LOTE, new FieldFillerArchetype(1, ' '));
         addFieldArchetype(CODIGO_INSCRICAO, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(INSCRICAO_NUMERO, new FieldIntegerFixedLengthArchetype(15));
-        addFieldArchetype(CONVENIO_COBRANCA, new FieldStringFixedLengthArchetype(9));
-        addFieldArchetype(COBRANCA_CEDENTE, new FieldIntegerFixedLengthArchetype(4));
-        addFieldArchetype(CARTEIRA_COBRANCA, new FieldIntegerFixedLengthArchetype(2));
-        addFieldArchetype(VARIACAO_CARTEIRA_COBRANCA, new FieldIntegerFixedLengthArchetype(3));
-        addFieldArchetype(CAMPO_REMESSA_TESTE, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(CONVENIO_COBRANCA, new FieldStringFixedLengthArchetype(20));        
         addFieldArchetype(AGENCIA_MANTENEDORA, new FieldIntegerFixedLengthArchetype(5));
         addFieldArchetype(DIGITO_VERIFICADOR_1, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(NUMERO_CONTA, new FieldIntegerFixedLengthArchetype(12));
         addFieldArchetype(DIGITO_VERIFICADOR_2, new FieldStringFixedLengthArchetype(1));
-        addFieldArchetype(BRANCOS_CONTA_2, new FieldDefaultArchetype(" "));
+        addFieldArchetype(DIGITO_VER_AG_CONTA, new FieldStringFixedLengthArchetype(1));        
         addFieldArchetype(NOME_EMPRESA, new FieldStringFixedLengthArchetype(30));
-        addFieldArchetype(MENSAGEM_1, new FieldStringFixedLengthArchetype(40));
+        addFieldArchetype(MENSAGEM_1, new FieldFillerArchetype(40, ' '));
         addFieldArchetype(MENSAGEM_2, new FieldFillerArchetype(40, ' '));
         addFieldArchetype(N_SEQ_ARQUIVO_RET, new FieldIntegerFixedLengthArchetype(8));
         addFieldArchetype(DATA_GRAVACAO_ARQUIVO, new FieldDateFixedLengthArchetype("ddMMyyyy"));

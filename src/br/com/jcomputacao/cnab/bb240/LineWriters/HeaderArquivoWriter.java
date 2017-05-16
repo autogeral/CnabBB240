@@ -28,7 +28,8 @@ public class HeaderArquivoWriter {
         
         //DADOS ARQUIVO
         line.setFieldValue(LineCnab240BBArquivoHeader.CODIGO_REM_RET, ham.getCodigoRemessaRetorno());
-        line.setFieldValue(LineCnab240BBArquivoHeader.DATAHORA_GERACAO_ARQUIVO, ham.getDataHoraGeracao());
+        line.setFieldValue(LineCnab240BBArquivoHeader.DATA_GERACAO_ARQUIVO, ham.getDataHoraGeracao());
+        line.setFieldValue(LineCnab240BBArquivoHeader.HORA_GERACAO_ARQUIVO, ham.getDataHoraGeracao());
         line.setFieldValue(LineCnab240BBArquivoHeader.NUM_SEQUENCIAL_ARQUIVO, ham.getNumeroSequencialRegistro());
         line.setFieldValue(LineCnab240BBArquivoHeader.DENSIDADE_GRAVACAO, ham.getDensidadeGravacaoArquivo());
         line.setFieldValue(LineCnab240BBArquivoHeader.RESERVADO_BANCO, ham.getReservadoBanco());

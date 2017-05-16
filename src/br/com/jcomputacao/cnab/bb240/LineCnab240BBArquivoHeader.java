@@ -86,7 +86,11 @@ public class LineCnab240BBArquivoHeader extends LineArchetype {
     /**
      * DATA DE GERACAO DO ARQUIVO POSICAO 144 151
      */
-    public static final String DATAHORA_GERACAO_ARQUIVO = "DATA_GERACAO_ARQUIVO";
+    public static final String DATA_GERACAO_ARQUIVO = "DATA_GERACAO_ARQUIVO";
+    /**
+     * HORA DE GERACAO DO ARQUIVO POSICAO 152 157
+     */
+    public static final String HORA_GERACAO_ARQUIVO = "HORA_GERACAO_ARQUIVO";
     /**
      * NUMERO SEQUENCIAL DO ARQUIVO POSICAO 158 163
      */
@@ -132,7 +136,7 @@ public class LineCnab240BBArquivoHeader extends LineArchetype {
     public LineCnab240BBArquivoHeader() {
 
         //DADOS DE CONTROLE
-        addFieldArchetype(CODIGO_BANCO, new FieldDefaultArchetype("001"));
+        addFieldArchetype(CODIGO_BANCO, new FieldStringFixedLengthArchetype(3));
         addFieldArchetype(LOTE_SERVICO, new FieldDefaultArchetype("0000"));
         addFieldArchetype(LOTE_TIPO_REGISTRO, new FieldDefaultArchetype("0"));
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(9, ' '));
@@ -153,12 +157,13 @@ public class LineCnab240BBArquivoHeader extends LineArchetype {
 
         //DADOS DO ARQUIVO        
         addFieldArchetype(CODIGO_REM_RET, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(DATAHORA_GERACAO_ARQUIVO, new FieldDateFixedLengthArchetype("ddMMyyyyHHmmss"));
+        addFieldArchetype(DATA_GERACAO_ARQUIVO, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        addFieldArchetype(HORA_GERACAO_ARQUIVO, new FieldDateFixedLengthArchetype("HHmmss"));
         addFieldArchetype(NUM_SEQUENCIAL_ARQUIVO, new FieldIntegerFixedLengthArchetype(6));
-        addFieldArchetype(VERSAO_LAYOUT, new FieldDefaultArchetype("040"));
-        addFieldArchetype(DENSIDADE_GRAVACAO, new FieldDefaultArchetype("00000"));
+        addFieldArchetype(VERSAO_LAYOUT, new FieldStringFixedLengthArchetype(3));
+        addFieldArchetype(DENSIDADE_GRAVACAO, new FieldDefaultArchetype("06250"));
         addFieldArchetype(RESERVADO_BANCO, new FieldFillerArchetype(20, ' '));
-        addFieldArchetype(RESERVADO_EMPRESA, new FieldStringFixedLengthArchetype(20));
-        addFieldArchetype(EXCLUSIVO_FEBRABAN_3, new FieldFillerArchetype(11, ' '));
+        addFieldArchetype(RESERVADO_EMPRESA, new FieldFillerArchetype(20, ' '));
+        addFieldArchetype(EXCLUSIVO_FEBRABAN_3, new FieldFillerArchetype(29, ' '));
     }
 }

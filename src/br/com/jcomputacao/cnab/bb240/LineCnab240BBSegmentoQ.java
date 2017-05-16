@@ -187,7 +187,7 @@ public class LineCnab240BBSegmentoQ extends LineArchetype{
         addFieldArchetype(TIPO_INSCRICAO_TERCEIRO, new FieldIntegerFixedLengthArchetype(1));        
         addFieldArchetype(NUMERO_INSCRICAO_TERCEIRO, new FieldIntegerFixedLengthArchetype(15));        
         addFieldArchetype(NOME_SACADOR, new FieldStringFixedLengthArchetype(40));        
-        addFieldArchetype(CODIGO_BANCO_CORRESP, new FieldDefaultArchetype("000"));        
+        addFieldArchetype(CODIGO_BANCO_CORRESP, new FieldIntegerFixedLengthArchetype(3));        
         addFieldArchetype(NOSSO_NUMERO, new FieldFillerArchetype(20, ' '));
         addFieldArchetype(BRANCOS, new FieldFillerArchetype(8, ' '));        
     }
