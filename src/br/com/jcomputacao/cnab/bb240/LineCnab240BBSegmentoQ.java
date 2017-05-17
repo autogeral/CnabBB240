@@ -168,10 +168,10 @@ public class LineCnab240BBSegmentoQ extends LineArchetype{
         public LineCnab240BBSegmentoQ() {
 
 //*****************************Registro Header de Lote****************************************
-        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldIntegerFixedLengthArchetype(3));        
+        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldStringFixedLengthArchetype(3));        
         addFieldArchetype(CODIGO_DO_LOTE, new FieldIntegerFixedLengthArchetype(4));        
         addFieldArchetype(TIPO_DE_REGISTRO, new FieldIntegerFixedLengthArchetype(1));       
-        addFieldArchetype(SEQUENCIAL_REGISTRO, new FieldStringFixedLengthArchetype(5));        
+        addFieldArchetype(SEQUENCIAL_REGISTRO, new FieldIntegerFixedLengthArchetype(5));        
         addFieldArchetype(CODIGO_SEGMENTO, new FieldDefaultArchetype("Q"));        
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(1, ' '));        
         addFieldArchetype(CODIGO_MOVIMENTO_REMESSA, new FieldIntegerFixedLengthArchetype(2));       

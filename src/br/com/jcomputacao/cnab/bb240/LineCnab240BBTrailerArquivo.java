@@ -90,8 +90,8 @@ public class LineCnab240BBTrailerArquivo extends LineArchetype{
      public static final String TOTAL_LOTES_REGISTROS_BRANCOS = "TOTAL_LOTES_REGISTROS_BRANCOS";
 
     public LineCnab240BBTrailerArquivo(){
-         addFieldArchetype(CODIGO_BANCO_TRAILER, new FieldIntegerFixedLengthArchetype(3));        
-         addFieldArchetype(CODIGO_LOTE_TRAILER, new FieldDefaultArchetype("9999"));//
+         addFieldArchetype(CODIGO_BANCO_TRAILER, new FieldStringFixedLengthArchetype(3));        
+         addFieldArchetype(CODIGO_LOTE_TRAILER, new FieldDefaultArchetype("9999"));
          addFieldArchetype(TIPO_REGISTRO_TRAILER, new FieldDefaultArchetype("9"));
          addFieldArchetype(BRANCOS_REGISTRO_TRAILER_ARQUIVO, new FieldFillerArchetype(9, ' '));
          addFieldArchetype(TOTAL_LOTES_ARQUIVO, new FieldIntegerFixedLengthArchetype(6));

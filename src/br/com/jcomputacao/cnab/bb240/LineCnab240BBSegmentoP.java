@@ -253,7 +253,7 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
 
     public LineCnab240BBSegmentoP() {
 
-        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldIntegerFixedLengthArchetype(3));
+        addFieldArchetype(CODIGO_BANCO_COMPENSACAO, new FieldStringFixedLengthArchetype(3));
 
         addFieldArchetype(CODIGO_DO_LOTE, new FieldIntegerFixedLengthArchetype(4));
 
@@ -319,7 +319,7 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
 
         addFieldArchetype(CODIGO_DESCONTO_1, new FieldIntegerFixedLengthArchetype(1));
 
-        addFieldArchetype(DATA_DESCONTO_1, new FieldDateFixedLengthArchetype("ddMMyyyy"));
+        addFieldArchetype(DATA_DESCONTO_1, new FieldIntegerFixedLengthArchetype(8));
 
         addFieldArchetype(VALOR_PERCENTUAL_DESCONTO_1, new FieldDecimalFixedLengthArchetype(15, 2));
 

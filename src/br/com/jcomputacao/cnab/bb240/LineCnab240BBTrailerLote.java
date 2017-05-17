@@ -70,7 +70,7 @@ public class LineCnab240BBTrailerLote extends LineArchetype {
     
     
     public LineCnab240BBTrailerLote() {
-        addFieldArchetype(CODIGO_BANCO_TRAILER, new FieldIntegerFixedLengthArchetype(3));
+        addFieldArchetype(CODIGO_BANCO_TRAILER, new FieldStringFixedLengthArchetype(3));
         addFieldArchetype(CODIGO_LOTE_TRAILER, new FieldIntegerFixedLengthArchetype(4));
         addFieldArchetype(TIPO_REGISTRO_TRAILER, new FieldDefaultArchetype("5"));
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(9, ' '));

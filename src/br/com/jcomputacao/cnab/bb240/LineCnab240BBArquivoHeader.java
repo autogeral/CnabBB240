@@ -157,8 +157,8 @@ public class LineCnab240BBArquivoHeader extends LineArchetype {
 
         //DADOS DO ARQUIVO        
         addFieldArchetype(CODIGO_REM_RET, new FieldIntegerFixedLengthArchetype(1));
-        addFieldArchetype(DATA_GERACAO_ARQUIVO, new FieldDateFixedLengthArchetype("ddMMyyyy"));
-        addFieldArchetype(HORA_GERACAO_ARQUIVO, new FieldDateFixedLengthArchetype("HHmmss"));
+        addFieldArchetype(DATA_GERACAO_ARQUIVO, new FieldIntegerFixedLengthArchetype(8));
+        addFieldArchetype(HORA_GERACAO_ARQUIVO, new FieldIntegerFixedLengthArchetype(6));
         addFieldArchetype(NUM_SEQUENCIAL_ARQUIVO, new FieldIntegerFixedLengthArchetype(6));
         addFieldArchetype(VERSAO_LAYOUT, new FieldStringFixedLengthArchetype(3));
         addFieldArchetype(DENSIDADE_GRAVACAO, new FieldDefaultArchetype("06250"));
