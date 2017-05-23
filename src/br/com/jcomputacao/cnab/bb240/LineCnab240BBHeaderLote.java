@@ -52,7 +52,7 @@ public class LineCnab240BBHeaderLote extends LineArchetype {
 
     /**
      * LAYOUT DO LOTE NUMERO DA VERSAO DO LAYOUT DO LOTE POSICAO 014 016 PICTURE
-     * 9(03) CONTEUDO '042'
+     * 9(03) CONTEUDO '041'
      */
     public static final String LAYOUT_LOTE = "LAYOUT_LOTE";
 
@@ -161,7 +161,7 @@ public class LineCnab240BBHeaderLote extends LineArchetype {
         addFieldArchetype(OPERACAO, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(CODIGO_SERVICO, new FieldDefaultArchetype("01"));
         addFieldArchetype(EXCLUSIVO_FEBRABAN, new FieldFillerArchetype(2, ' '));
-        addFieldArchetype(LAYOUT_LOTE, new FieldDefaultArchetype("042"));
+        addFieldArchetype(LAYOUT_LOTE, new FieldDefaultArchetype("041"));
         addFieldArchetype(BRANCOS_LAYOUT_LOTE, new FieldFillerArchetype(1, ' '));
         addFieldArchetype(CODIGO_INSCRICAO, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(INSCRICAO_NUMERO, new FieldIntegerFixedLengthArchetype(15));
