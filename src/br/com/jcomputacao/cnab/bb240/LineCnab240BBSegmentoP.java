@@ -102,11 +102,11 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
     /**
      * IDENTIFICACAO DO TITULO NO BANCO POSICAO 038 040 3 POSICOES
      */
-    public static final String IDENTIFICACAO_TITULO_BANCO = "IDENTIFICACAO_TITULO_BANCO";
+//    public static final String IDENTIFICACAO_TITULO_BANCO = "IDENTIFICACAO_TITULO_BANCO";
     /**
      * ZEROS POSICAO 041 045 5 POSICOES
      */
-    public static final String ZEROS = "ZEROS";
+//    public static final String ZEROS = "ZEROS";
     /**
      * NOSSO_NUMERO POSICAO 046 056 11 POSICOES
      */
@@ -277,11 +277,11 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
 
         addFieldArchetype(DIGITO_VERIFICADOR_AGENCIA_CONTA, new FieldStringFixedLengthArchetype(1));
 
-        addFieldArchetype(IDENTIFICACAO_TITULO_BANCO, new FieldIntegerFixedLengthArchetype(3));
+//        addFieldArchetype(IDENTIFICACAO_TITULO_BANCO, new FieldIntegerFixedLengthArchetype(3));
+//        
+//        addFieldArchetype(ZEROS, new FieldDefaultArchetype("00000"));
         
-        addFieldArchetype(ZEROS, new FieldDefaultArchetype("00000"));
-        
-        addFieldArchetype(NOSSO_NUMERO, new FieldStringFixedLengthArchetype(12));
+        addFieldArchetype(NOSSO_NUMERO, new FieldStringFixedLengthArchetype(20));
                 
 //        addFieldArchetype(DIGITO_NOSSO_NUMERO, new FieldStringFixedLengthArchetype(1));
 
