@@ -20,7 +20,7 @@ public class SegmentoPWriter {
         line.setFieldValue(LineCnab240BBSegmentoP.CODIGO_MOVIMENTO_REMESSA, la.getCodigoRemessa());
         line.setFieldValue(LineCnab240BBSegmentoP.DIGITO_VERIFICADOR_AGENCIA, String.valueOf(la.getDigitoVerificadorAgencia()));
         line.setFieldValue(LineCnab240BBSegmentoP.DIGITO_VERIFICADOR_CONTA, String.valueOf(la.getDigitoVerificadorContaCorrente()));
-        line.setFieldValue(LineCnab240BBSegmentoP.IDENTIFICACAO_TITULO_BANCO, la.getIdentificacaoTituloBanco());
+//        line.setFieldValue(LineCnab240BBSegmentoP.IDENTIFICACAO_TITULO_BANCO, la.getIdentificacaoTituloBanco());
         line.setFieldValue(LineCnab240BBSegmentoP.AGENCIA_MANTENEDORA, la.getNumeroAgencia());
         line.setFieldValue(LineCnab240BBSegmentoP.NUMERO_CONTA, la.getNumeroContaCorrente());
         line.setFieldValue(LineCnab240BBSegmentoP.CODIGO_DO_LOTE, la.getNumeroLote());
