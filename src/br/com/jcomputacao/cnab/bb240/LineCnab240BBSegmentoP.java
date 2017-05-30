@@ -295,7 +295,7 @@ public class LineCnab240BBSegmentoP extends LineArchetype {
 
         addFieldArchetype(IDENTIFICACAO_DISTRIBUICAO, new FieldIntegerFixedLengthArchetype(1));//62
 
-        addFieldArchetype(NUMERO_DOCUMENTO_COBRANCA, new FieldStringFixedLengthArchetype(15));//Numero de documento 77
+        addFieldArchetype(NUMERO_DOCUMENTO_COBRANCA, new FieldIntegerFixedLengthArchetype(15));//Numero de documento 77
 
         addFieldArchetype(DATA_VENCIMENTO_TITULO, new FieldDateFixedLengthArchetype("ddMMyyyy")); //85
 
